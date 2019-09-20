@@ -36,7 +36,7 @@ def main(stdscr):
     ppos = [sw//2, sh//2]
     pdir = curses.KEY_RIGHT
     papp = ".o."
-    ptra = "..."
+    ptra = "   "
     stdscr.addstr(ppos[1], ppos[0], papp)
     
     while 1:
@@ -49,10 +49,10 @@ def main(stdscr):
             ppos = update_player_position(pdir, ppos)
             stdscr.addstr(ppos[1], ppos[0], papp)
         if key == curses.KEY_BACKSPACE:
-            if ptra == "...":
-                ptra = "~~~"
-            else:
-                ptra = "..."
+            if ptra == "   ":
+                ptra = " # "
+            else :
+                ptra = "   "
     stdscr.refresh()
 
 
